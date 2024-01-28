@@ -1,30 +1,41 @@
-name: Xcode - Build and Analyze
+name: "Build iOS app"
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
+    branches: [main]
 
 jobs:
-  build:
-    name: Build and analyse default scheme using xcodebuild command
+  build_with_signing:
     runs-on: macos-latest
-
     steps:
-      - name: Checkout
+      # this was more debug as was curious what came pre-installed
+      # GitHub shares this online, e.g. https://github.com/actions/runner-images/blob/macOS-12/20230224.1/images/macos/macos-12-Readme.md
+      - name: check Xcode version
+        run: /usr/bin/xcodebuild -version
+
+      - name: checkout repository
         uses: actions/checkout@v3
-      - name: Set Default Scheme
+
+      - name: build archive
         run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
-          echo $default | cat >default
-          echo Using default scheme: $default
-      - name: Build
+          xcodebuild -scheme "AdminApp" \
+          -archivePath $RUNNER_TEMP/adminapp.xcarchive \
+          -sdk iphoneos \
+          -configuration Debug \
+          -destination generic/platform=iOS \
+          clean archive          
+
+      - name: export ipa
         env:
-          scheme: ${{ 'default' }}
+          EXPORT_OPTIONS_PLIST: ${{ secrets.EXPORT_OPTIONS_PLIST }}
         run: |
-          if [ $scheme = default ]; then scheme=$(cat default); fi
-          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild clean build analyze -scheme "$scheme" -"$filetype_parameter" "$file_to_build" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild -archivePath $RUNNER_TEMP/adminapp.xcarchive -exportPath $RUNNER_TEMP/build          
+
+      - name: Upload application
+        uses: actions/upload-artifact@v3
+        with:
+          name: app
+          path: ${{ runner.temp }}/build/I\ am\ Groot.ipa
+          # you can also archive the entire directory 
+          # path: ${{ runner.temp }}/build
+          retention-days: 3
