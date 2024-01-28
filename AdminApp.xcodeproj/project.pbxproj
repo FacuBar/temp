@@ -7,21 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A386E9A3F7CF7ED67BCD45F /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734FD9A45F148933EEE17A2 /* MyApp.swift */; };
 		5A287DD515CCB607469E43A0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA80CED42338E1C582822B3 /* ViewModel.swift */; };
 		AC874974002091D1C961B72B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52061923D163AB7690439DF8 /* View.swift */; };
-		DF2C6623A7E0B16DD82EC86D /* AdminApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37958C63918D34E5B492BBD2 /* AdminApp.swift */; };
 		E6EE291A07D6C157CA29A072 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C404DCDF4A344D107A186BA /* Model.swift */; };
-		EFC8DFA9327200A421D6CBD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1275028A237BCB54127E18 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37958C63918D34E5B492BBD2 /* AdminApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminApp.swift; sourceTree = "<group>"; };
+		1734FD9A45F148933EEE17A2 /* MyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApp.swift; sourceTree = "<group>"; };
 		52061923D163AB7690439DF8 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		6C107BCFAC41B72A19DC3A90 /* AdminApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AdminApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C404DCDF4A344D107A186BA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8CE12948C9D8DDF0EC6D26CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AEA80CED42338E1C582822B3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		FF1275028A237BCB54127E18 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -46,20 +44,11 @@
 		832DC1210DF09BC4D9333044 /* AdminApp */ = {
 			isa = PBXGroup;
 			children = (
-				37958C63918D34E5B492BBD2 /* AdminApp.swift */,
 				8CE12948C9D8DDF0EC6D26CB /* Info.plist */,
+				1734FD9A45F148933EEE17A2 /* MyApp.swift */,
 				2E82E33F30DA38F5CA1E4E13 /* Coupons */,
-				B5353559A44C215C702DC596 /* Preview Content */,
 			);
 			path = AdminApp;
-			sourceTree = "<group>";
-		};
-		B5353559A44C215C702DC596 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				FF1275028A237BCB54127E18 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		D0983556111410BB3ED441AE /* Products */ = {
@@ -78,7 +67,6 @@
 			buildConfigurationList = 745C97934FF1382D1F525328 /* Build configuration list for PBXNativeTarget "AdminApp" */;
 			buildPhases = (
 				E36A743837C45A16DB3DC615 /* Sources */,
-				37FAFF6BC1F090866E347368 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -117,24 +105,13 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		37FAFF6BC1F090866E347368 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EFC8DFA9327200A421D6CBD1 /* Preview Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		E36A743837C45A16DB3DC615 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF2C6623A7E0B16DD82EC86D /* AdminApp.swift in Sources */,
 				E6EE291A07D6C157CA29A072 /* Model.swift in Sources */,
+				4A386E9A3F7CF7ED67BCD45F /* MyApp.swift in Sources */,
 				AC874974002091D1C961B72B /* View.swift in Sources */,
 				5A287DD515CCB607469E43A0 /* ViewModel.swift in Sources */,
 			);
@@ -209,7 +186,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.efacubar.admin-app.AdminApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bruges.admin-app.AdminApp";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -288,7 +265,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.efacubar.admin-app.AdminApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bruges.admin-app.AdminApp";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

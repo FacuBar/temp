@@ -1,6 +1,6 @@
 name: AdminApp
 options:
-  bundleIdPrefix: com.efacubar.admin-app
+  bundleIdPrefix: com.bruges.admin-app
   deploymentTarget:
     iOS: 16.2
 targets:

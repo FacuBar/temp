@@ -1,7 +1,18 @@
-This is a basic template which the App Maker app clones as a starting point.
+# Requisites
 
-More information at: https://www.appmakerios.com
+- Xcode
+- [xcodegen](https://github.com/yonaskolb/XcodeGen)
+- [SwiftFormat](https://github.com/nicklockwood/SwiftFormat)
 
-App Maker download for iOS: https://apps.apple.com/us/app/app-maker-build-native-apps/id1473768340
+# Run the app
+- Generate the xcodeproj 
+  ```bash
+  xcodegen
+  ```
+- Open the project on Xcode
 
-Testflight download for iOS: http://testflight.apple.com/join/zElad2Q2
+# Formating
+```bash
+swiftformat .
+```
+
