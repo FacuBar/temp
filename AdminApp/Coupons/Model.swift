@@ -1,14 +1,14 @@
 struct Coupon: Decodable {
-    var code: String
+  var code: String
 }
 
 struct PromotionCoupon: Identifiable, Decodable {
-    var id: Int
-    var name: String
-    var coupons: [Coupon]
+  var id: Int
+  var name: String
+  var coupons: [Coupon]
 }
 
 struct PromotionCouponReq {
-    var promotionId: Int
-    var couponId: String
+  var promotionId: Int
+  var couponId: String
 }
