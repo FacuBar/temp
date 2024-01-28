@@ -2,7 +2,7 @@ name: AdminApp
 options:
   bundleIdPrefix: com.bruges
   deploymentTarget:
-    iOS: 17.0
+    iOS: 16.2
 targets:
   AdminApp:
     type: application
