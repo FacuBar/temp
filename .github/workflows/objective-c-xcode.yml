@@ -25,7 +25,7 @@ jobs:
           -archivePath $RUNNER_TEMP/adminapp.xcarchive \
           -sdk iphoneos \
           -destination generic/platform=iOS \
-          clean archive          
+          clean archive CODE_SIGNING_REQUIRED=NO        
 
       - name: export ipa
         env:
