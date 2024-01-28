@@ -15,13 +15,15 @@ jobs:
 
       - name: checkout repository
         uses: actions/checkout@v3
+      
+      - name: build info
+        - run: xcodebuild -list -project AdminApp.xcodeproj
 
       - name: build archive
         run: |
           xcodebuild -scheme "AdminApp" \
           -archivePath $RUNNER_TEMP/adminapp.xcarchive \
           -sdk iphoneos \
-          -configuration Debug \
           -destination generic/platform=iOS \
           clean archive          
 
